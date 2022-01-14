@@ -1,7 +1,9 @@
 import React from 'react';
 import { getUser, removeUserSession } from './Utils/Common';
-import {Router } from 'react-router-dom';
+import {Image, Button, Row} from "react-bootstrap";
+import {Router, Link } from 'react-router-dom';
 import history from './history';
+import PostList from './Post/PostList';
  
 function Dashboard(props) {
   const user = getUser();
@@ -17,8 +19,18 @@ function Dashboard(props) {
   return (
     <div>
       Welcome {user}!<br /><br />
-      <input type="button" onClick={handleLogout} value="Logout" />
+      {/* <input type="button" onClick={handleLogout} value="Logout" /> */}
+      <Button variant = "secondary" onClick={handleLogout}>
+        Log out
+      </Button>
+      <Link to='/editor'>
+          <Button variant="primary">  
+          New Post
+          </Button>
+      </Link>
+      <PostList></PostList>
     </div>
+    
   );
 }
  

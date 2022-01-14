@@ -7,6 +7,7 @@ import axios from 'axios';
 import Login from './Login';
 import Signup from './Signup';
 import Dashboard from './Dashboard';
+import TextEditor from './TextEditor';
 import Home from './Home';
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicRoute from './Utils/PublicRoute';
@@ -44,6 +45,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/editor" element={<TextEditor />} />
       </Routes>
       </BrowserRouter>
       
